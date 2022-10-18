@@ -23,7 +23,7 @@ include_once("connect.php");
                     <a href="index.php"><img src="./images/logo.png" width="125px"></a>
                 </div>
                 <nav>
-                    <ul id="MenuItems">
+                    <ul id="MenuItems"> 
                         <li>
                     <?php
                         session_start();
