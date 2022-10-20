@@ -91,21 +91,21 @@ if(isset($_GET['id'])){
     <div class="small-container single-product" method="post">
         <div class="row">
         <?php
-            $sql1 = "SELECT * from product where Product_ID='".$_GET['id']."'";
+            $sql1 = "SELECT * from product where p_id='".$_GET['id']."'";
             $re1 = pg_query($conn,$sql1);
             $row1 = pg_fetch_assoc($re1);
             
         ?>
             <div class="col-2">
                 <!-- Big image -->
-                <p style="text-align:center;"><img src="./images/<?=$row1['Pro_image']?>" width="85%"  id="productImg"></p>
+                <p style="text-align:center;"><img src="./images/<?=$row1['p_id']?>" width="85%"  id="productImg"></p>
 
                 <!-- Small image -->
                 <div style="text-align:center;" class="small-img-row">
                     <?php
-                        $sql5 = "SELECT * from category where Cat_Des='".$_GET['id']."'";
-                        $re5 = mysqli_query($conn,$sql5);
-                        while($row5 = mysqli_fetch_array($re5)) {
+                        $sql5 = "SELECT * from category where cat_des='".$_GET['id']."'";
+                        $re5 = pg_query($conn,$sql5);
+                        while($row5 = pg_fetch_array($re5)) {
                     ?>
                         <div class="small-img-rol">
                             <img src="./images/<?=$row5['Gallery']?>" width="100%" class="small-img">
