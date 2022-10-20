@@ -78,7 +78,7 @@
                 
         <?php
             $sql1 = "SELECT * from product";
-            $rel1 = mysqli_query($conn,$sql1);
+            $rel1 = pg_query($conn,$sql1);
         ?>
                
                 </div>
@@ -97,7 +97,7 @@
                         </thead>
                         <tbody>
                             <?php
-                                while($row = mysqli_fetch_assoc($rel1) ) {
+                                while($row = pg_fetch_assoc($rel1) ) {
                             ?>
                             <tr id="table">
                                 <td id="table"><?=$row['Product_ID']?></td>

@@ -3,8 +3,8 @@ include_once("connect.php");
 
 if(isset($_GET['id'])){
     $sql = "SELECT DetailDesc from product where Product_ID = '".$_GET['id']."'";
-    $res = mysqli_query($conn,$sql);
-    $row = mysqli_fetch_row($res);
+    $res = pg_query($conn,$sql);
+    $row = pg_fetch_row($res);
   }
   
   else if(isset($_GET['pid']) && isset($_GET['quantity_input'])){
@@ -143,8 +143,8 @@ if(isset($_GET['id'])){
                     <br>
                     <?php
                        $sql2 = "SELECT * from product where Product_ID = '".$_GET['id']."'";
-                       $res2 = mysqli_query($conn,$sql2);
-                       $row2 = mysqli_fetch_array($res2);
+                       $res2 = pg_query($conn,$sql2);
+                       $row2 = pg_fetch_array($res2);
                     ?>
                     <p style="text-align: justify;" class="detaildesc"><?=$row2['DetailDesc']?></p>
                     
@@ -166,8 +166,8 @@ if(isset($_GET['id'])){
         <div class="row">
         <?php
         $sql = "select * from Product";
-        $re = mysqli_query($conn,$sql);
-        while($row = mysqli_fetch_assoc($re)){
+        $re = pg_query($conn,$sql);
+        while($row = pg_fetch_assoc($re)){
         ?>
             <div class="col-4" style="padding-top: 10px;">
                 <a href="products_detal.php?id=<?=$row['Product_ID']?>"><img src="images/<?=$row['Pro_image']?>"></a>
