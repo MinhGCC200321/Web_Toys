@@ -82,13 +82,13 @@ include_once("connect.php");
       
         <div class="row">
         <?php
-        $sql = "select * from Product";
+        $sql = "select * from product";
         $re = pg_query($conn,$sql);
         while($row = pg_fetch_assoc($re)){
         ?>
             <div class="col-4">
-                <a href="products_detal.php?id=<?=$row['Product_ID']?>"><img src="images/<?=$row['Pro_image']?>"></a>
-                <h4><?=$row['Product_Name']?></h4>
+                <a href="products_detal.php?id=<?=$row['p_id']?>"><img src="images/<?=$row['p_image']?>"></a>
+                <h4><?=$row['p_name']?></h4>
                 <div class="rating">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -96,7 +96,7 @@ include_once("connect.php");
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star-o"></i>
                 </div>
-                <p>$<?=$row['Price']?></p>
+                <p>$<?=$row['p_price']?></p>
             </div>
             <?php
             }
