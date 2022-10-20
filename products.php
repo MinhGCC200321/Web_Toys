@@ -82,8 +82,8 @@ include_once("connect.php");
       
         <div class="row">
         <?php
-        $sql = "select * from product";
-        $re = pg_query($conn,$sql);
+        // $sql = "select * from product";
+        $re = pg_query($conn,"SELECT * FROM product");
         while($row = pg_fetch_assoc($re)){
         ?>
             <div class="col-4">
