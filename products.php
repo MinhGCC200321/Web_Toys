@@ -84,6 +84,10 @@ include_once("connect.php");
         <?php
         // $sql = "select * from product";
         $re = pg_query($conn,"SELECT * FROM product");
+        if (!$re) {
+            echo "An error occurred.\n";
+            
+          }
         while($row = pg_fetch_array($re)){
         ?>
             <div class="col-4">
