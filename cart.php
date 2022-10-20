@@ -5,9 +5,9 @@
         $user = $_SESSION['user'];
         if(isset($_GET['id'])){
           $p_id = $_GET['id'];
-          $checkEx = mysqli_query($conn,"SELECT p_id from cart where username='$user`' and p_id = '$p_id'");
+          $checkEx = pg_query($conn,"SELECT p_id from cart where username='$user`' and p_id = '$p_id'");
           
-          if(mysqli_num_rows($checkEx) == 0){
+          if(pg_num_rows($checkEx) == 0){
             $query = "INSERT INTO cart (username, p_id, p_qty, date) 
             VALUES ('$user', '$p_id', 1, CURDATE())";
           } else{
@@ -15,12 +15,12 @@
             and p_id='$p_id'";
           }
       
-          if(!mysqli_query($conn,$query)){
+          if(!pg_query($conn,$query)){
             echo "Error" . mysqli_error($conn);
           }
         }
         $sqlSelect = "SELECT * FROM cart c, product p WHERE c.p_id = p.Product_ID and username='$user'";
-        $resShow = mysqli_query($conn,$sqlSelect);
+        $resShow = pg_query($conn,$sqlSelect);
         $sum = 0;
     }
     else{

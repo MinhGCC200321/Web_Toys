@@ -92,8 +92,8 @@ if(isset($_GET['id'])){
         <div class="row">
         <?php
             $sql1 = "SELECT * from product where Product_ID='".$_GET['id']."'";
-            $re1 = mysqli_query($conn,$sql1);
-            $row1 = mysqli_fetch_assoc($re1);
+            $re1 = pg_query($conn,$sql1);
+            $row1 = pg_fetch_assoc($re1);
             
         ?>
             <div class="col-2">
