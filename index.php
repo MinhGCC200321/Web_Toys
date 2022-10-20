@@ -106,8 +106,8 @@ include_once("connect.php");
         <div class="row">
         <?php
             $sql = "select * from Product";
-            $re = mysqli_query($conn,$sql);
-            while($row = mysqli_fetch_assoc($re)){
+            $re = pg_query($conn,$sql);
+            while($row = pg_fetch_assoc($re)){
         ?>
         <div class="col-4">
             <a href="products_detal.php?id=<?=$row['Product_ID']?>"><img src="images/<?=$row['Pro_image']?>"></a>
