@@ -19,7 +19,7 @@ include_once("connect.php");
         <div class="container">
             <div class="navbar">
                 <div class="logo">
-                    <a href="index.php"><img src="./images/logo.png" width="390px"></a>
+                    <a href="index.php"><img src="./images/logo.png" width="250px"></a>
                 </div>
                 <nav>
                     <ul id="MenuItems"> 
@@ -105,13 +105,13 @@ include_once("connect.php");
         <h2 class="title">Featured Products</h2>
         <div class="row">
         <?php
-            $sql = "select * from Product";
+            $sql = "select * from product";
             $re = pg_query($conn,$sql);
             while($row = pg_fetch_assoc($re)){
         ?>
         <div class="col-4">
             <a href="products_detal.php?id=<?=$row['Product_ID']?>"><img src="images/<?=$row['Pro_image']?>"></a>
-            <h4><?=$row['Product_Name']?></h4>
+            <h4><?=$row['p_name']?></h4>
             <div class="rating">
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
@@ -119,7 +119,7 @@ include_once("connect.php");
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star-o"></i>
             </div>
-                <p>$<?=$row['Price']?></p>
+                <p>$<?=$row['p_price']?></p>
             </div>
         <?php
             }

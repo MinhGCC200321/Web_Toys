@@ -84,7 +84,7 @@ include_once("connect.php");
         <?php
         // $sql = "select * from product";
         $re = pg_query($conn,"SELECT * FROM product");
-        while($row = pg_fetch_assoc($re)){
+        while($row = pg_fetch_array($re)){
         ?>
             <div class="col-4">
                 <a href="products_detal.php?id=<?=$row['p_id']?>"><img src="images/<?=$row['p_image']?>"></a>
