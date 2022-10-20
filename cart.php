@@ -16,7 +16,7 @@
           }
       
           if(!pg_query($conn,$query)){
-            echo "Error" . mysqli_error($conn);
+            echo "Error :)";
           }
         }
         $sqlSelect = "SELECT * FROM cart c, product p WHERE c.p_id = p.Product_ID and username='$user'";
