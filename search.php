@@ -99,8 +99,8 @@ if (isset($_REQUEST['ok'])) {
                 while($row = pg_fetch_assoc($sql)){
                 ?>
                     <div class="col-4">
-                        <a href="products_detal.php?id=<?=$row['Product_ID']?>"><img src="images/<?=$row['Pro_image']?>"></a>
-                        <h4><?=$row['Product_Name']?></h4>
+                        <a href="products_detal.php?id=<?=$row['p_id']?>"><img src="images/<?=$row['p_image']?>"></a>
+                        <h4><?=$row['p_name']?></h4>
                         <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -108,7 +108,7 @@ if (isset($_REQUEST['ok'])) {
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star-o"></i>
                         </div>
-                        <p>$<?=$row['Price']?></p>
+                        <p>$<?=$row['p_price']?></p>
                     </div>
                     <?php
                     }    
