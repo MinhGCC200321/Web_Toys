@@ -25,14 +25,14 @@
         <?php
             include_once("connect.php");
             if (isset($_POST['Insert'])) {
-                $id = pg_escape_string($_POST['p_id']);
-                $name = pg_escape_string($_POST['p_name']);
-                $price = pg_escape_string($_POST['p_price']);
+                $id = pg_escape_string($_POST['Product_id']);
+                $name = pg_escape_string($_POST['Product_Name']);
+                $price = pg_escape_string($_POST['Price']);
                 // $sdesc = pg_escape_string($conn,$_POST['SmallDesc']);
                 // $detaildesc = pg_escape_string($conn,$_POST['DetailDesc']);
                 // $date = pg_escape_string($conn,$_POST['ProDate']);
-                $qty = pg_escape_string($_POST['p_quantity']);
-                $img = $_FILES['p_image'];
+                $qty = pg_escape_string($_POST['Pro_qty']);
+                $img = $_FILES['Pro_image'];
                 // $catid = pg_escape_string($conn,$_POST['Cat_ID']);
                 copy($img['tmp_name'], "./images/" . $img['name']);
                 $filePic = $img['name'];
@@ -63,7 +63,7 @@
                                         <div class="form-group">
                                             <label for="first-name-vertical">Product ID</label>
                                             <input type="text" id="pid" class="form-control"
-                                                name="product_id" placeholder="Product ID"
+                                                name="Product_id" placeholder="Product ID"
                                                 value ="">
                                         </div>
                                     </div>
