@@ -2,7 +2,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Add New Product</title>
         <!-- <link rel="stylesheet" href="./css/style.css"> -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -25,13 +25,13 @@
         <?php
             include_once("connect.php");
             if (isset($_POST['Insert'])) {
-                $id = pg_escape_string($conn,$_POST['p_id']);
-                $name = pg_escape_string($conn,$_POST['p_name']);
-                $price = pg_escape_string($conn,$_POST['p_price']);
+                $id = pg_escape_string($_POST['p_id']);
+                $name = pg_escape_string($_POST['p_name']);
+                $price = pg_escape_string($_POST['p_price']);
                 // $sdesc = pg_escape_string($conn,$_POST['SmallDesc']);
                 // $detaildesc = pg_escape_string($conn,$_POST['DetailDesc']);
                 // $date = pg_escape_string($conn,$_POST['ProDate']);
-                $qty = pg_escape_string($conn,$_POST['p_quantity']);
+                $qty = pg_escape_string($_POST['p_quantity']);
                 $img = $_FILES['p_image'];
                 // $catid = pg_escape_string($conn,$_POST['Cat_ID']);
                 copy($img['tmp_name'], "./images/" . $img['name']);
