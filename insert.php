@@ -28,16 +28,16 @@
                 $id = pg_escape_string($conn,$_POST['p_id']);
                 $name = pg_escape_string($conn,$_POST['p_name']);
                 $price = pg_escape_string($conn,$_POST['p_price']);
-                $sdesc = pg_escape_string($conn,$_POST['SmallDesc']);
-                $detaildesc = pg_escape_string($conn,$_POST['DetailDesc']);
-                $date = pg_escape_string($conn,$_POST['ProDate']);
+                // $sdesc = pg_escape_string($conn,$_POST['SmallDesc']);
+                // $detaildesc = pg_escape_string($conn,$_POST['DetailDesc']);
+                // $date = pg_escape_string($conn,$_POST['ProDate']);
                 $qty = pg_escape_string($conn,$_POST['p_quantity']);
                 $img = $_FILES['p_image'];
-                $catid = pg_escape_string($conn,$_POST['Cat_ID']);
+                // $catid = pg_escape_string($conn,$_POST['Cat_ID']);
                 copy($img['tmp_name'], "./images/" . $img['name']);
                 $filePic = $img['name'];
-                $result = pg_query($conn, "INSERT INTO product (p_id,p_name,p_price,DetailDesc,ProDate,p_quantity,p_image,Cat_ID) 
-                VALUES ('{$id}','{$name}',{$price},'{$detaildesc}','{$date}',{$qty},'{$filePic}','{$catid}')");
+                $result = pg_query($conn, "INSERT INTO product (p_id,p_name,p_price,p_quantity,p_image) 
+                VALUES ('{$id}','{$name}',{$price},{$qty},'{$filePic}')");
 
                 if ($result) {
                     echo "<script>  
@@ -82,29 +82,29 @@
                                                 name="Price" placeholder="Price" value ="">
                                         </div>
                                     </div>
-                                    <div class="col-12">
+                                    <!-- <div class="col-12">
                                         <div class="form-group">
                                             <label for="first-name-vertical">Product Small Description</label>
                                             <input type="text" id="SmallDesc" class="form-control"
                                                 name="SmallDesc" placeholder="Product Small Description"
                                                 value ="">
                                         </div>
-                                    </div>
-                                    <div class="col-12">
+                                    </div> -->
+                                    <!-- <div class="col-12">
                                         <div class="form-group">
                                             <label for="first-name-vertical">Product Description</label>
                                             <input type="text" id="DetailDesc" class="form-control"
                                                 name="DetailDesc" placeholder="Product Description"
                                                 value ="">
                                         </div>
-                                    </div>
-                                    <div class="col-12">
+                                    </div> -->
+                                    <!-- <div class="col-12">
                                         <div class="form-group">
                                             <label for="first-name-vertical">Product Date</label>
                                             <input id="ProDate" class="form-control" type="date" name="ProDate" value ="" placeholder="yyyy-mm-dd"/>
                                             
                                         </div>
-                                    </div>
+                                    </div> -->
                                     
                                     <div class="col-12">
                                         <div class="form-group">
@@ -119,14 +119,14 @@
                                             <input type="file" name="Pro_image" id="Pro_image" class="form-control" value="">
                                         </div>
                                     </div>
-                                    <div class="col-12">
+                                    <!-- <div class="col-12">
                                         <div class="form-group">
                                             <label for="password-vertical">Cat_ID</label>
                                             <input type="text" id="cat_id" class="form-control"
                                                 name="Cat_ID" placeholder="Cat id" value ="">
                                         </div>
                                         <br>
-                                    </div>                                 
+                                    </div>                                  -->
                                     <div class="col-12 d-flex justify-content-end">
                                         <button type="submit" class="btn btn-warning me-1 mb-1 rounded-pill" name="Insert">Submit</button>
                                         <button type="reset"
