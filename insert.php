@@ -118,6 +118,7 @@
                                             <label for="image-vertical">Image</label>
                                             <input type="file" name="Pro_image" id="Pro_image" class="form-control" value="">
                                         </div>
+                                        <br>
                                     </div>
                                     <!-- <div class="col-12">
                                         <div class="form-group">
