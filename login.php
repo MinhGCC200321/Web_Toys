@@ -39,7 +39,7 @@ if(isset($_POST['btnLogin'])){
     <!-- Bootstrap5 CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     
-    <title>BS5 Login</title>
+    <title>ANT Shop Login</title>
 </head>
 <body class="d-flex text-center">
     <form class="form-login" method="POST" action="">

@@ -7,7 +7,7 @@ include_once("connect.php");
 
 if (isset($_REQUEST['ok'])) {
     $search = addslashes($_GET['search']);
-    $query = "select * from product where Product_Name like '%$search%'";
+    $query = "select * from product where p_name like '%$search%'";
     $sql = pg_query($conn,$query);
     $num = pg_num_rows($sql);
 }

@@ -25,19 +25,18 @@
         <?php
             include_once("connect.php");
             if (isset($_POST['Insert'])) {
-                $id = mysqli_real_escape_string($conn,$_POST['product_id']);
-                $name = mysqli_real_escape_string($conn,$_POST['Product_Name']);
-                $price = mysqli_real_escape_string($conn,$_POST['Price']);
-                $sdesc = mysqli_real_escape_string($conn,$_POST['SmallDesc']);
-                $detaildesc = mysqli_real_escape_string($conn,$_POST['DetailDesc']);
-                $date = mysqli_real_escape_string($conn,$_POST['ProDate']);
-                $qty = mysqli_real_escape_string($conn,$_POST['Pro_qty']);
-                $img = $_FILES['Pro_image'];
-                $catid = mysqli_real_escape_string($conn,$_POST['Cat_ID']);
-
+                $id = pg_escape_string($conn,$_POST['p_id']);
+                $name = pg_escape_string($conn,$_POST['p_name']);
+                $price = pg_escape_string($conn,$_POST['p_price']);
+                $sdesc = pg_escape_string($conn,$_POST['SmallDesc']);
+                $detaildesc = pg_escape_string($conn,$_POST['DetailDesc']);
+                $date = pg_escape_string($conn,$_POST['ProDate']);
+                $qty = pg_escape_string($conn,$_POST['p_quantity']);
+                $img = $_FILES['p_image'];
+                $catid = pg_escape_string($conn,$_POST['Cat_ID']);
                 copy($img['tmp_name'], "./images/" . $img['name']);
                 $filePic = $img['name'];
-                $result = mysqli_query($conn, "INSERT INTO product (Product_ID,Product_Name,Price,DetailDesc,ProDate,Pro_qty,Pro_image,Cat_ID) 
+                $result = pg_query($conn, "INSERT INTO product (p_id,p_name,p_price,DetailDesc,ProDate,p_quantity,p_image,Cat_ID) 
                 VALUES ('{$id}','{$name}',{$price},'{$detaildesc}','{$date}',{$qty},'{$filePic}','{$catid}')");
 
                 if ($result) {
