@@ -100,17 +100,17 @@
                                 while($row = pg_fetch_assoc($rel1) ) {
                             ?>
                             <tr id="table">
-                                <td id="table"><?=$row['Product_ID']?></td>
-                                <td id="table"><?=$row['Product_Name']?></td>
-                                <td id="table"><?=$row['Price']?></td>
+                                <td id="table"><?=$row['p_id']?></td>
+                                <td id="table"><?=$row['p_name']?></td>
+                                <td id="table"><?=$row['p_price']?></td>
                                 <td style="text-align: left;"  id="table"><?=$row['DetailDesc']?></td>
-                                <td id="table"><?=$row['Pro_qty']?></td>
-                                <td id="table"><?=$row['Cat_ID']?></td>
+                                <td id="table"><?=$row['p_quantity']?></td>
+                                <td id="table"><?=$row['cat_id']?></td>
                                 <td>
-                                    <a href="update.php?id=<?=$row['Product_ID']?>" class="btn btn-warning rounded-pill">Update</a> 
+                                    <a href="update.php?id=<?=$row['p_id']?>" class="btn btn-warning rounded-pill">Update</a> 
                                 </td>
                                 <td>
-                                    <a href="delete.php?id=<?=$row['Product_ID']?>" class="btn btn-warning rounded-pill">Delete</a> 
+                                    <a href="delete.php?id=<?=$row['p_id']?>" class="btn btn-warning rounded-pill">Delete</a> 
                                 </td>
                             </tr>
                             <?php
