@@ -5,7 +5,7 @@ session_start();
 if(isset($_POST['btnLogin'])){
     $uname = $_POST['Username'];
     $pwd = md5($_POST['Password']);
-    $sql = "SELECT * FROM user WHERE Username = '$uname' and Password = '$pwd'";
+    $sql = "SELECT * FROM user WHERE username = '$uname' and password = '$pwd'";
     $re = pg_query($conn,$sql);
     if(pg_num_rows($re) > 0 ){
         $_SESSION['user'] = $uname;
