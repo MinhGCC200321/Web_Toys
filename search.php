@@ -8,8 +8,8 @@ include_once("connect.php");
 if (isset($_REQUEST['ok'])) {
     $search = addslashes($_GET['search']);
     $query = "select * from product where Product_Name like '%$search%'";
-    $sql = mysqli_query($conn,$query);
-    $num = mysqli_num_rows($sql);
+    $sql = pg_query($conn,$query);
+    $num = pg_num_rows($sql);
 }
 
 ?>   
@@ -96,7 +96,7 @@ if (isset($_REQUEST['ok'])) {
             {
                 if ($num > 0 && $search != "") 
                 {
-                while($row = mysqli_fetch_assoc($sql)){
+                while($row = pg_fetch_assoc($sql)){
                 ?>
                     <div class="col-4">
                         <a href="products_detal.php?id=<?=$row['Product_ID']?>"><img src="images/<?=$row['Pro_image']?>"></a>
