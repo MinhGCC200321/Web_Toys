@@ -78,9 +78,9 @@ if (isset($_REQUEST['ok'])) {
             
         </div>  
 
+        <br>
         <p>Number of products found: <?=$num?></p>
         <br>
-
         <div class="row">
         <?php
         if (isset($_REQUEST['ok'])) 
