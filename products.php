@@ -91,7 +91,7 @@ include_once("connect.php");
         while($row = pg_fetch_array($re)){
         ?>
             <div class="col-4">
-                <a href="products_detal.php?id=<?=$row['p_id']?>"><img src="./images/<?=$row['p_image']?>"></a>
+                <a href="products_detal.php?id=<?=$row['p_id']?>"><img src="images/<?=$row['p_image']?>"></a>
                 <h4><?=$row['p_name']?></h4>
                 <div class="rating">
                     <i class="fa fa-star"></i>
