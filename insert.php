@@ -55,7 +55,7 @@
                 } else
                     echo "<script>  
                     alert('You have not successfully inserted');
-                    window.location = 'manager.php';
+                    window.location = 'insert.php';
                     </script>";
             }
         ?>
