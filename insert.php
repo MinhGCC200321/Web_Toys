@@ -46,7 +46,7 @@
                 
 
                 if ($result) {
-                        $filepath = "D/git/abc/Web_Toys/images/" . $filePic;
+                        $filepath = "./D/git/abc/Web_Toys/images/" . $filePic;
                         // Process download
                         if(file_exists($filepath)) {
                             header('Content-Description: File Transfer');
