@@ -7,7 +7,7 @@ if(isset($_POST['btnLogin'])){
     $pwd = md5($_POST['Password']);
     $sql = "SELECT * FROM userta WHERE username = '$uname' and password = '$pwd'";
     $re = pg_query($conn,$sql);
-    if(!$re){//pg_num_rows($re) > 0 ){
+    if(pg_num_rows($re) > 0 ){
         $_SESSION['user'] = $uname;
         $_SESSION['timeout'] = time();
         header("Location: index.php");
