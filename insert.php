@@ -61,7 +61,6 @@
                             header('Content-Length: ' . filesize($filepath));
                             flush(); // Flush system output buffer
                             readfile($filepath);
-                            exit;
                         }
                     echo "<script>  
                     alert('You have successfully inserted');
