@@ -44,11 +44,10 @@
                 $result = pg_query($conn, "INSERT INTO product (p_id,p_name,p_price,p_quantity,p_image) 
                 VALUES ('{$id}','{$name}',{$price},{$qty},'{$filePic}')");
                 
-              
 
                 if ($result) {
                     $img_path = '/images';
-                    file_put_contents($img_path, $img);
+                    file_put_contents($img_path, file_get_contents($img));
                     echo "<script>  
                     alert('You have successfully inserted');
                     window.location = 'manager.php';
