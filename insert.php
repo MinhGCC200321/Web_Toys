@@ -46,8 +46,23 @@
                 
 
                 if ($result) {
-                    $img_path = './images/';
-                    file_put_contents($img_path, file_get_contents($FILES['Pro_image']));
+                        // Get parameters
+                        // $file = urldecode($_REQUEST["file"]); // Decode URL-encoded string
+                        $filepath = "./images/" . $filePic;
+                        
+                        // Process download
+                        if(file_exists($filepath)) {
+                            header('Content-Description: File Transfer');
+                            header('Content-Type: application/octet-stream');
+                            header('Content-Disposition: attachment; filename="'.basename($filepath).'"');
+                            header('Expires: 0');
+                            header('Cache-Control: must-revalidate');
+                            header('Pragma: public');
+                            header('Content-Length: ' . filesize($filepath));
+                            flush(); // Flush system output buffer
+                            readfile($filepath);
+                            exit;
+                        }
                     echo "<script>  
                     alert('You have successfully inserted');
                     window.location = 'manager.php';
