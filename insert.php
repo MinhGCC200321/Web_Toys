@@ -19,7 +19,7 @@
 <!-- div content -->
     <div id="main">     
         <div style="text-align: center;" className="page-heading pb-2 mt-4 mb-2 ">
-            <h3>Manager</h3>
+            <h3>Add New Products</h3>
         </div>
 
         <?php
