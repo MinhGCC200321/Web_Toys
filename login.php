@@ -13,7 +13,7 @@ if(isset($_POST['btnLogin'])){
         header("Location: index.php");
     } else{
         echo "<script>  
-        alert('Wrong username or password');
+        alert('Wrong username or password: <?php $uname?> );
     </script>";
     }
 }   
