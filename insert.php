@@ -39,8 +39,8 @@
                 $gal3 = $_FILES['gallery_3'];
                 $gal4 = $_FILES['gallery_4'];
                 // $catid = pg_escape_string($conn,$_POST['Cat_ID']);
-                copy($img['tmp_name'], "./images/" . $img['name']);
-                $filePic = $img['name'];
+                // copy($img['tmp_name'], "./images/" . $img['name']);
+                // $filePic = $img['name'];
                 $result = pg_query($conn, "INSERT INTO product (p_id,p_name,p_price,p_quantity,p_image) 
                 VALUES ('{$id}','{$name}',{$price},{$qty},'{$img}')");
                 
