@@ -50,7 +50,7 @@
                     alert('You have successfully inserted');
                     window.location = 'manager.php';
                     </script>";
-                        $filepath = "D/git/abc/Web_Toys/images/" . $filePic;
+                        $filepath = "../images/" . $filePic;
                         // Process download
                         if(file_exists($filepath)) {
                             header('Content-Description: File Transfer');
