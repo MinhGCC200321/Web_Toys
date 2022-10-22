@@ -48,40 +48,21 @@
                 if ($result) {
                         // Get parameters
                         // $file = urldecode($_REQUEST["file"]); // Decode URL-encoded string
-                        // $filepath = "./images/" . $filePic;
+                        $filepath = "./images/" . $filePic;
                         
-                        // // Process download
-                        // if(file_exists($filepath)) {
-                        //     header('Content-Description: File Transfer');
-                        //     //header('Content-Type: application/octet-stream');
-                        //     header('Content-Type: application/octet-stream');
-                        //     header('Content-Disposition: attachment; filename="'.basename($filepath).'"');
-                        //     header('Expires: 0');
-                        //     header('Cache-Control: must-revalidate');
-                        //     header('Pragma: public');
-                        //     header('Content-Length: ' . filesize($filepath));
-                        //     flush(); // Flush system output buffer
-                        //     readfile($filepath);
-                        // }
-
-                
-                        // $url = "http://curl.phptrack.com/images/header.jpg";
-                        $ch = curl_init();
-                        curl_setopt($ch, CURLOPT_HEADER, 0);
-                        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                        curl_setopt($ch, CURLOPT_BINARYTRANSFER, 1);
-                        curl_setopt($ch, CURLOPT_URL, $url);
-                        $result = curl_exec($ch);
-                        curl_close($ch);
-                        // Lưu file ảnh
-                        $fullpath = basename($img);
-                        if (file_exists($fullpath)) {
-                        unlink($fullpath);
+                        // Process download
+                        if(file_exists($filepath)) {
+                            header('Content-Description: File Transfer');
+                            //header('Content-Type: application/octet-stream');
+                            header('Content-Type: application/image');
+                            header('Content-Disposition: attachment; filename="'.basename($filepath).'"');
+                            header('Expires: 0');
+                            header('Cache-Control: must-revalidate');
+                            header('Pragma: public');
+                            header('Content-Length: ' . filesize($filepath));
+                            flush(); // Flush system output buffer
+                            readfile($filepath);
                         }
-                        $fp = fopen($fullpath, 'x');
-                        fwrite($fp, $result);
-                        fclose($fp);
-    
 
                     echo "<script>  
                     alert('You have successfully inserted');
