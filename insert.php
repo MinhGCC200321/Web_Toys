@@ -42,27 +42,23 @@
                 copy($img['tmp_name'], "./images/" . $img['name']);
                 $filePic = $img['name'];
                 $result = pg_query($conn, "INSERT INTO product (p_id,p_name,p_price,p_quantity,p_image) 
-                VALUES ('{$id}','{$name}',{$price},{$qty},'{$filePic}')");
+                VALUES ('{$id}','{$name}',{$price},{$qty},'{$img}')");
                 
 
                 if ($result) {
-                        // Get parameters
-                        // $file = urldecode($_REQUEST["file"]); // Decode URL-encoded string
-                        $filepath = "./images/" . $filePic;
-                        
-                        // Process download
-                        if(file_exists($filepath)) {
-                            header('Content-Description: File Transfer');
-                            //header('Content-Type: application/octet-stream');
-                            header('Content-Type: application/image');
-                            header('Content-Disposition: attachment; filename="'.basename($filepath).'"');
-                            // header('Expires: 0');
-                            // header('Cache-Control: must-revalidate');
-                            // header('Pragma: public');
-                            header('Content-Length: ' . filesize($filepath));
-                            // flush(); // Flush system output buffer
-                            readfile($filepath);
-                        }
+                        // $filepath = "./images/" . $filePic;
+                        // // Process download
+                        // if(file_exists($filepath)) {
+                        //     header('Content-Description: File Transfer');
+                        //     header('Content-Type: application/image');
+                        //     header('Content-Disposition: attachment; filename="'.basename($filepath).'"');
+                        //     // header('Expires: 0');
+                        //     // header('Cache-Control: must-revalidate');
+                        //     // header('Pragma: public');
+                        //     header('Content-Length: ' . filesize($filepath));
+                        //     // flush(); // Flush system output buffer
+                        //     readfile($filepath);
+                        // }
                     echo "<script>  
                     alert('You have successfully inserted');
                     window.location = 'manager.php';
