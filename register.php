@@ -22,8 +22,8 @@ if(isset($_POST['btnRegister'])){
          '$email',$date,$month,
          $year,'123','1')";
 
-    if(!mysqli_query($conn,$sql)){
-        echo "Error" .mysqli_error($conn);
+    if(!pg_query($conn,$sql)){
+        echo "Error";
 
     } else{
         header("Location: login.php");
