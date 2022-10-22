@@ -93,7 +93,7 @@ if(isset($_GET['id'])){
         <?php
             $sql1 = "SELECT * from product where p_id='".$_GET['id']."'";
             $re1 = pg_query($conn,$sql1);
-            $row1 = pg_fetch_assoc($re1);
+            $row1 = pg_fetch_array($re1);
             
         ?>
             <div class="col-2">

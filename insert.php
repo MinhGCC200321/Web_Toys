@@ -31,8 +31,13 @@
                 // $sdesc = pg_escape_string($conn,$_POST['SmallDesc']);
                 // $detaildesc = pg_escape_string($conn,$_POST['DetailDesc']);
                 // $date = pg_escape_string($conn,$_POST['ProDate']);
+            
                 $qty = pg_escape_string($_POST['Pro_qty']);
                 $img = $_FILES['Pro_image'];
+                $gal1 = $_FILES['gallery_1'];
+                $gal2 = $_FILES['gallery_2'];
+                $gal3 = $_FILES['gallery_3'];
+                $gal4 = $_FILES['gallery_4'];
                 // $catid = pg_escape_string($conn,$_POST['Cat_ID']);
                 copy($img['tmp_name'], "./images/" . $img['name']);
                 $filePic = $img['name'];
@@ -82,30 +87,6 @@
                                                 name="Price" placeholder="Price" value ="">
                                         </div>
                                     </div>
-                                    <!-- <div class="col-12">
-                                        <div class="form-group">
-                                            <label for="first-name-vertical">Product Small Description</label>
-                                            <input type="text" id="SmallDesc" class="form-control"
-                                                name="SmallDesc" placeholder="Product Small Description"
-                                                value ="">
-                                        </div>
-                                    </div> -->
-                                    <!-- <div class="col-12">
-                                        <div class="form-group">
-                                            <label for="first-name-vertical">Product Description</label>
-                                            <input type="text" id="DetailDesc" class="form-control"
-                                                name="DetailDesc" placeholder="Product Description"
-                                                value ="">
-                                        </div>
-                                    </div> -->
-                                    <!-- <div class="col-12">
-                                        <div class="form-group">
-                                            <label for="first-name-vertical">Product Date</label>
-                                            <input id="ProDate" class="form-control" type="date" name="ProDate" value ="" placeholder="yyyy-mm-dd"/>
-                                            
-                                        </div>
-                                    </div> -->
-                                    
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="contact-info-vertical">Quantity</label>
@@ -120,14 +101,46 @@
                                         </div>
                                         <br>
                                     </div>
-                                    <!-- <div class="col-12">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="first-name-vertical">Gallery 1</label>
+                                            <input type="file" id="gallery_1" class="form-control"
+                                                name="gallery_1" placeholder="Gallery 1"
+                                                value ="">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="first-name-vertical">Gallery 2</label>
+                                            <input type="file" id="gallery_2" class="form-control"
+                                                name="gallery_2" placeholder="Gallery 2"
+                                                value ="">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="first-name-vertical">Gallery 3</label>
+                                            <input type="file" id="gallery_3" class="form-control"
+                                                name="gallery_3" placeholder="Gallery 3"
+                                                value ="">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="first-name-vertical">Gallery 4</label>
+                                            <input type="file" id="gallery_4" class="form-control"
+                                                name="gallery_4" placeholder="Gallery 4"
+                                                value ="">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
                                         <div class="form-group">
                                             <label for="password-vertical">Cat_ID</label>
                                             <input type="text" id="cat_id" class="form-control"
                                                 name="Cat_ID" placeholder="Cat id" value ="">
                                         </div>
                                         <br>
-                                    </div>                                  -->
+                                    </div>                                 
                                     <div class="col-12 d-flex justify-content-end">
                                         <button type="submit" class="btn btn-warning me-1 mb-1 rounded-pill" name="Insert">Submit</button>
                                         <button type="reset"
