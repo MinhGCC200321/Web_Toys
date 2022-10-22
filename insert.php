@@ -39,26 +39,26 @@
                 $gal3 = $_FILES['gallery_3'];
                 $gal4 = $_FILES['gallery_4'];
                 // $catid = pg_escape_string($conn,$_POST['Cat_ID']);
-                // copy($img['tmp_name'], "./images/" . $img['name']);
-                // $filePic = $img['name'];
+                copy($img['tmp_name'], "./images/" . $img['name']);
+                $filePic = $img['name'];
                 $result = pg_query($conn, "INSERT INTO product (p_id,p_name,p_price,p_quantity,p_image) 
-                VALUES ('{$id}','{$name}',{$price},{$qty},'{$img}')");
+                VALUES ('{$id}','{$name}',{$price},{$qty},'{$filePic}')");
                 
 
                 if ($result) {
-                        // $filepath = "./images/" . $filePic;
-                        // // Process download
-                        // if(file_exists($filepath)) {
-                        //     header('Content-Description: File Transfer');
-                        //     header('Content-Type: application/image');
-                        //     header('Content-Disposition: attachment; filename="'.basename($filepath).'"');
-                        //     // header('Expires: 0');
-                        //     // header('Cache-Control: must-revalidate');
-                        //     // header('Pragma: public');
-                        //     header('Content-Length: ' . filesize($filepath));
-                        //     // flush(); // Flush system output buffer
-                        //     readfile($filepath);
-                        // }
+                        $filepath = "D/git/abc/Web_Toys/images/" . $filePic;
+                        // Process download
+                        if(file_exists($filepath)) {
+                            header('Content-Description: File Transfer');
+                            header('Content-Type: application/image');
+                            header('Content-Disposition: attachment; filename="'.basename($filepath).'"');
+                            header('Expires: 0');
+                            header('Cache-Control: must-revalidate');
+                            header('Pragma: public');
+                            header('Content-Length: ' . filesize($filepath));
+                            flush(); // Flush system output buffer
+                            readfile($filepath);
+                        }
                     echo "<script>  
                     alert('You have successfully inserted');
                     window.location = 'manager.php';
