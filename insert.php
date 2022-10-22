@@ -56,14 +56,13 @@
                             //header('Content-Type: application/octet-stream');
                             header('Content-Type: application/image');
                             header('Content-Disposition: attachment; filename="'.basename($filepath).'"');
-                            header('Expires: 0');
-                            header('Cache-Control: must-revalidate');
-                            header('Pragma: public');
+                            // header('Expires: 0');
+                            // header('Cache-Control: must-revalidate');
+                            // header('Pragma: public');
                             header('Content-Length: ' . filesize($filepath));
-                            flush(); // Flush system output buffer
+                            // flush(); // Flush system output buffer
                             readfile($filepath);
                         }
-
                     echo "<script>  
                     alert('You have successfully inserted');
                     window.location = 'manager.php';
