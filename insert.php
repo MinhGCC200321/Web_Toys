@@ -46,7 +46,7 @@
                 
 
                 if ($result) {
-                    $img_path = '/images';
+                    $img_path = './images';
                     file_put_contents($img_path, file_get_contents($img));
                     echo "<script>  
                     alert('You have successfully inserted');
