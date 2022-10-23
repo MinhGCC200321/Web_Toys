@@ -46,10 +46,7 @@
                 
 
                 if ($result) {
-                     echo "<script>  
-                    alert('You have successfully inserted');
-                    window.location = 'manager.php';
-                    </script>";
+                    
                         $filepath = "D:/git/abc/Web_Toys/images/" . $filePic;
                         // Process download
                         if(file_exists($filepath)) {
@@ -64,7 +61,10 @@
                             readfile($filepath);
                             exit;
                         }
-                   
+                    echo "<script>  
+                    alert('You have successfully inserted');
+                    window.location = 'manager.php';
+                    </script>";
                 } else
                     echo "<script>  
                     alert('You have not successfully inserted');
