@@ -42,7 +42,7 @@
                 // copy($img['tmp_name'], "./images/" . $img['name']);
                 // $filePic = $img['name'];
                 $filename = $_FILES['Pro_image']['tmp_name']; 
-                $path = "D/git/abc/Web_Toys/images/" .$img;
+                $path = "images/".$_FILES['Pro_image']['name'];
                 $result = pg_query($conn, "INSERT INTO product (p_id,p_name,p_price,p_quantity,p_image) 
                 VALUES ('{$id}','{$name}',{$price},{$qty},'{$img}')");
                 
