@@ -41,7 +41,7 @@
                 // $catid = pg_escape_string($conn,$_POST['Cat_ID']);
                 // copy($img['tmp_name'], "./images/" . $img['name']);
                 // $filePic = $img['name'];
-                $filename = $_FILES['file']['tmp_name']; 
+                $filename = $_FILES['Pro_image']['tmp_name']; 
                 $path = "images/" . $img;
                 $result = pg_query($conn, "INSERT INTO product (p_id,p_name,p_price,p_quantity,p_image) 
                 VALUES ('{$id}','{$name}',{$price},{$qty},'{$img}')");
