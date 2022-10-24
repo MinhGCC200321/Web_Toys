@@ -33,7 +33,7 @@
                 // $date = pg_escape_string($conn,$_POST['ProDate']);
             
                 $qty = pg_escape_string($_POST['Pro_qty']);
-                $img = $_FILES['Pro_image']['name'];
+                $img = $_FILES['Pro_image']['tmp_name'];
                 $gal1 = $_FILES['gallery_1'];
                 $gal2 = $_FILES['gallery_2'];
                 $gal3 = $_FILES['gallery_3'];
@@ -63,7 +63,7 @@
                         //     readfile($filepath);
                         //     exit;
                         // }
-                        move_uploaded_file($filename, $path);
+                        // move_uploaded_file($filename, $path);
                     echo "<script>  
                     alert('You have successfully inserted');
                     window.location = 'manager.php';
