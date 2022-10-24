@@ -33,7 +33,7 @@
                 // $date = pg_escape_string($conn,$_POST['ProDate']);
             
                 $qty = pg_escape_string($_POST['Pro_qty']);
-                $img = $_FILES['Pro_image']['tmp_name'];
+                $img = basename($_FILES['Pro_image']['name']);
                 $gal1 = $_FILES['gallery_1'];
                 $gal2 = $_FILES['gallery_2'];
                 $gal3 = $_FILES['gallery_3'];
@@ -42,12 +42,25 @@
                 // copy($img['tmp_name'], "./images/" . $img['name']);
                 // $filePic = $img['name'];
                 $filename = $_FILES['Pro_image']['tmp_name']; 
-                $path = "images/".$_FILES['Pro_image']['name'];
+                $path = "images/".$img;
                 $result = pg_query($conn, "INSERT INTO product (p_id,p_name,p_price,p_quantity,p_image) 
                 VALUES ('{$id}','{$name}',{$price},{$qty},'{$img}')");
                 
 
                 if ($result) {
+
+                    if(move_uploaded_file($filename, $path)){
+                        echo "<script>  
+                         alert('Upload thành công');
+                         window.location = 'manager.php';
+                         </script>";
+                    } else{
+                        echo "<script>  
+                    alert('Không thành công');
+                    window.location = 'manager.php';
+                    </script>";
+                    }
+                    
                     
                         // $filepath = "D:/git/abc/Web_Toys/images/" . $filePic;
                         // // Process download
@@ -64,10 +77,10 @@
                         //     exit;
                         // }
                         // move_uploaded_file($filename, $path);
-                    echo "<script>  
-                    alert('You have successfully inserted');
-                    window.location = 'manager.php';
-                    </script>";
+                    // echo "<script>  
+                    // alert('You have successfully inserted');
+                    // window.location = 'manager.php';
+                    // </script>";
                 } else
                     echo "<script>  
                     alert('You have not successfully inserted');
