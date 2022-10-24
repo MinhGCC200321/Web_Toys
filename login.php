@@ -3,7 +3,7 @@ include_once("connect.php");
 session_start();
 
 if(isset($_POST['btnLogin'])){
-    $uname = pg_escape_string(trim($_POST['Username']));
+    $uname = pg_escape_string($conn, trim($_POST['Username']));
     $pwd = md5(trim($_POST['Password']));
     $sql = "SELECT * FROM userta WHERE username = '$uname' and password = '$pwd'";
     $re = pg_query($conn,$sql);
