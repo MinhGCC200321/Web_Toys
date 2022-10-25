@@ -21,8 +21,8 @@ if(isset($_POST['btnLogin'])){
     // }
 
     echo "<script>  
-    //     alert('Wrong username or password: $uname -- $pwd);
-    // </script>";
+         alert('Wrong username or password: $uname -- $pwd);
+     </script>";
 }   
 ?>
 <!DOCTYPE html>
