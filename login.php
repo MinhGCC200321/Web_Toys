@@ -5,6 +5,9 @@ session_start();
 if(isset($_POST['btnLogin'])){
     $uname = pg_escape_string($conn, trim($_POST['Username']));
     $pwd = md5(trim($_POST['Password']));
+    echo "<script>  
+        alert('Wrong username or password: $uname - $pwd);
+    </script>";
     $sql = "SELECT * FROM userta WHERE username = '$uname' and password = '$pwd'";
     $re = pg_query($conn,$sql);
     if(pg_num_rows($re) > 0 ){
