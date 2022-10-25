@@ -8,8 +8,8 @@ if(isset($_POST['btnLogin'])){
     $sql = "SELECT * FROM userta WHERE username = '$uname' and password = '$pwd'";
     $re = pg_query($conn,$sql);
     if(pg_num_rows($re) > 0 ){
-        $_SESSION['user'] = $uname;
-        $_SESSION['timeout'] = time();
+        // $_SESSION['user'] = $uname;
+        // $_SESSION['timeout'] = time();
         header("Location: index.php");
     } else{
         echo "<script>  
