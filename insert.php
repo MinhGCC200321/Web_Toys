@@ -167,6 +167,7 @@
                                             <label for="image-vertical">Image</label>
                                             <input type="file" name="Pro_image" id="Pro_image" class="form-control" value="">
                                         </div>
+                                        <br>
                                     </div>
                                     <!-- <div class="col-12">
                                         <div class="form-group">
@@ -200,14 +201,7 @@
                                                 value ="">
                                         </div>
                                     </div> -->
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label for="password-vertical">Cat_ID</label>
-                                            <input type="text" id="cat_id" class="form-control"
-                                                name="Cat_ID" placeholder="Cat id" value ="">
-                                        </div>
-                                        <br>
-                                    </div>                                 
+                                                                 
                                     <div class="col-12 d-flex justify-content-end">
                                         <button type="submit" class="btn btn-warning me-1 mb-1 rounded-pill" name="Insert">Submit</button>
                                         <button type="reset"
