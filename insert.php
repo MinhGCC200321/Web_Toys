@@ -28,38 +28,39 @@
                 $id = pg_escape_string($_POST['Product_id']);
                 $name = pg_escape_string($_POST['Product_Name']);
                 $price = pg_escape_string($_POST['Price']);
-                // $sdesc = pg_escape_string($conn,$_POST['SmallDesc']);
-                // $detaildesc = pg_escape_string($conn,$_POST['DetailDesc']);
-                // $date = pg_escape_string($conn,$_POST['ProDate']);
-            
-                $qty = pg_escape_string($_POST['Pro_qty']);
+                $pdesc = pg_escape_string($_POST['P_des']);
+                $supid = pg_escape_string($_POST['Sup_id']);
+                $catid = pg_escape_string($_POST['Cat_id']);
+                $sid = pg_escape_string($_POST['Shop_id']);
+                $oldp = pg_escape_string($_POST['O_price']);
+                $qty = pg_escape_string($_POST['Quantity']);
                 $img = basename($_FILES['Pro_image']['name']);
-                $gal1 = $_FILES['gallery_1'];
-                $gal2 = $_FILES['gallery_2'];
-                $gal3 = $_FILES['gallery_3'];
-                $gal4 = $_FILES['gallery_4'];
+                // $gal1 = $_FILES['gallery_1'];
+                // $gal2 = $_FILES['gallery_2'];
+                // $gal3 = $_FILES['gallery_3'];
+                // $gal4 = $_FILES['gallery_4'];
                 // $catid = pg_escape_string($conn,$_POST['Cat_ID']);
                 // copy($img['tmp_name'], "./images/" . $img['name']);
                 // $filePic = $img['name'];
-                $filename = $_FILES['Pro_image']['tmp_name']; 
-                $path = "images/".$img;
-                $result = pg_query($conn, "INSERT INTO product (p_id,p_name,p_price,p_quantity,p_image) 
-                VALUES ('{$id}','{$name}',{$price},{$qty},'{$img}')");
+                // $filename = $_FILES['Pro_image']['tmp_name']; 
+                // $path = "images/".$img;
+                $result = pg_query($conn, "INSERT INTO product (p_id,p_name,p_quantity,p_price,sup_id,cat_id,s_id,old_price,p_des,p_image) 
+                VALUES ('{$id}','{$name}',{$qty},{$price},{$supid},{$catid},{$sid},{$oldp},{$pdesc},'{$img}')");
                 
 
                 if ($result) {
 
-                    if(move_uploaded_file($filename, $path)){
-                        echo "<script>  
-                         alert('Upload thành công');
-                         window.location = 'manager.php';
-                         </script>";
-                    } else{
-                        echo "<script>  
-                    alert('Không thành công');
-                    window.location = 'manager.php';
-                    </script>";
-                    }
+                    // if(move_uploaded_file($filename, $path)){
+                    //     echo "<script>  
+                    //      alert('Upload thành công');
+                    //      window.location = 'manager.php';
+                    //      </script>";
+                    // } else{
+                    //     echo "<script>  
+                    // alert('Không thành công');
+                    // window.location = 'manager.php';
+                    // </script>";
+                    // }
                     
                     
                         // $filepath = "D:/git/abc/Web_Toys/images/" . $filePic;
@@ -77,10 +78,10 @@
                         //     exit;
                         // }
                         // move_uploaded_file($filename, $path);
-                    // echo "<script>  
-                    // alert('You have successfully inserted');
-                    // window.location = 'manager.php';
-                    // </script>";
+                    echo "<script>  
+                    alert('You have successfully inserted');
+                    window.location = 'manager.php';
+                    </script>";
                 } else
                     echo "<script>  
                     alert('You have not successfully inserted');
@@ -93,7 +94,7 @@
             <div class="card">
                 <div class="card-content">
                     <div style="padding: 0px 350px;" class="card-body">
-                        <form class="form form-vertical" method="POST" action="" enctype="multipart/form-data" role="form  ">
+                        <form class="form form-vertical" method="POST" action="" enctype="multipart/form-data" role="form">
                             <div class="form-body">
                                 <div class="row">
                                     <div class="col-12">
@@ -114,6 +115,13 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
+                                            <label for="contact-info-vertical">Quantity</label>
+                                            <input type="number" id="Quantity" class="form-control"
+                                                name="Quantity" placeholder="Quantity" value ="">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
                                             <label for="contact-info-vertical">Price</label>
                                             <input type="number" id="Price" class="form-control"
                                                 name="Price" placeholder="Price" value ="">
@@ -121,9 +129,37 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label for="contact-info-vertical">Quantity</label>
-                                            <input type="number" id="Pro_qty" class="form-control"
-                                                name="Pro_qty" placeholder="Quantity" value ="">
+                                            <label for="contact-info-vertical">Supplier ID</label>
+                                            <input type="number" id="Sup_id" class="form-control"
+                                                name="Sup_id" placeholder="Supplier ID" value ="">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="contact-info-vertical">Category ID</label>
+                                            <input type="number" id="Cat_id" class="form-control"
+                                                name="Cat_id" placeholder="Category ID" value ="">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="contact-info-vertical">Shop ID</label>
+                                            <input type="number" id="Shop_id" class="form-control"
+                                                name="Shop_id" placeholder="Shop ID" value ="">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="contact-info-vertical">Import Prices</label>
+                                            <input type="number" id="O_price" class="form-control"
+                                                name="O_price" placeholder="Import Prices" value ="">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="contact-info-vertical">Product Description</label>
+                                            <input type="text" id="P_des" class="form-control"
+                                                name="P_des" placeholder="Product Description" value ="">
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -132,7 +168,7 @@
                                             <input type="file" name="Pro_image" id="Pro_image" class="form-control" value="">
                                         </div>
                                     </div>
-                                    <div class="col-12">
+                                    <!-- <div class="col-12">
                                         <div class="form-group">
                                             <label for="first-name-vertical">Gallery 1</label>
                                             <input type="file" id="gallery_1" class="form-control"
@@ -163,7 +199,7 @@
                                                 name="gallery_4" placeholder="Gallery 4"
                                                 value ="">
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="password-vertical">Cat_ID</label>
