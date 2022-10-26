@@ -45,7 +45,7 @@
                 // $filename = $_FILES['Pro_image']['tmp_name']; 
                 // $path = "images/".$img;
                 $result = pg_query($conn, "INSERT INTO product (p_id,p_name,p_quantity,p_price,sup_id,cat_id,s_id,old_price,p_des,p_image) 
-                VALUES ('{$id}','{$name}',{$qty},{$price},{$supid},{$catid},{$sid},{$oldp},{$pdesc},'{$img}')");
+                VALUES ('{$id}','{$name}',{$qty},{$price},{$supid},{$catid},{$sid},{$oldp},'{$pdesc}','{$img}')");
                 
 
                 if ($result) {
