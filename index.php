@@ -77,7 +77,7 @@ include_once("connect.php");
                     <a href="products.php" class="btn">Explore Now &#8594;</a>
                 </div>
                 <div class="col-2">
-                    <img src="images/image1.png">
+                    <img src="images/image1.jpg">
                 </div>
             </div>
         </div>
