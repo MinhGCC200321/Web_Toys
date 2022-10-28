@@ -2,7 +2,7 @@
 include_once("connect.php");
 
 if(isset($_GET['id'])){
-    $sql = "SELECT DetailDesc from product where Product_ID = '".$_GET['id']."'";
+    $sql = "SELECT p_des from product where p_id = '".$_GET['id']."'";
     $res = pg_query($conn,$sql);
     $row = pg_fetch_row($res);
   }
