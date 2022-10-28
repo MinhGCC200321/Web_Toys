@@ -98,7 +98,7 @@ if(isset($_GET['id'])){
         ?>
             <div class="col-2">
                 <!-- Big image -->
-                <p style="text-align:center;"><img src="./images/<?=$row1['p_id']?>" width="85%"  id="productImg"></p>
+                <p style="text-align:center;"><img src="./images/<?=$row1['p_image']?>" width="85%"  id="productImg"></p>
 
                 <!-- Small image -->
                 <div style="text-align:center;" class="small-img-row">
